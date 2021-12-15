@@ -1,0 +1,20 @@
+{
+  "name": "zenlab",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Tonmoy Deb (tonmoydeb404@gmail.com)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "compile:tailwind": "npx tailwindcss -i ./tailwindcss/tailwind.css -o ./style/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.1",
+    "vite": "^2.7.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "bootstrap-icons": "^1.7.2"
+  }
+}

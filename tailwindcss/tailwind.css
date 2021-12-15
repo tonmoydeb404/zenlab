@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default Config */
+@layer base {
+  html {
+    @apply text-secondary;
+  }
+
+  body {
+    @apply bg-offwhite;
+  }
+
+  a,
+  button,
+  input {
+    @apply duration-300;
+  }
+}
+
+/* Component Config */
+@layer components {
+  /* wrapper */
+  .wrapper {
+    @apply container px-4;
+  }
+
+  /* navbar config */
+  .navbar_toggle {
+    @apply bg-primary py-1 px-3 text-lg text-offwhite border-none rounded inline-block
+    md:hidden;
+  }
+
+  .navbar_links {
+    @apply hidden gap-7 flex-col 
+    md:flex-row md:flex;
+  }
+
+  .navbar_links a {
+    @apply font-semibold uppercase hover:text-primary;
+  }
+
+  /* Header config */
+  .header {
+    @apply bg-cover bg-no-repeat bg-center bg-blend-multiply min-h-[500px] flex flex-col justify-center;
+    position: relative;
+    background-image: linear-gradient(
+        theme("colors.primary"),
+        theme("colors.primary")
+      ),
+      url("../assets/images/hero.jpg");
+  }
+
+  .header_title {
+    @apply font-bold text-2xl 
+    sm:text-3xl
+    md:text-4xl;
+  }
+
+  .header_text {
+    @apply text-sm mt-5 w-full font-medium
+    md:text-base md:w-3/4;
+  }
+
+  /* button component */
+  .btn {
+    @apply inline-block font-medium py-2 px-6 text-lg rounded
+    sm:px-8 
+    md:font-semibold;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-offwhite;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-offwhite;
+  }
+
+  /* column component */
+  .single_column {
+    @apply flex justify-between gap-y-10 items-start;
+  }
+
+  .subtitle {
+    @apply text-lg font-semibold text-primary block uppercase;
+  }
+
+  .subtext {
+    @apply text-sm w-full px-0
+    md:w-[500px] md:px-3 mx-auto;
+  }
+
+  .title {
+    @apply text-2xl font-bold block 
+    sm:text-3xl;
+  }
+
+  .text {
+    @apply text-base mt-5 w-full;
+  }
+
+  /* grid cards */
+  .grid_cards {
+    @apply px-3 grid grid-cols-1 gap-4
+    sm:grid-cols-2
+    md:px-5 md:grid-cols-3
+    xl:grid-cols-4;
+  }
+
+  /* card component */
+  .card {
+    @apply py-6 px-4 rounded-xl shadow border-2 border-transparent duration-300;
+  }
+
+  .card .icon_wrapper {
+    @apply w-12;
+  }
+
+  .card .icon_wrapper img {
+    @apply w-full;
+  }
+
+  /* filled card component */
+  .filled_card {
+    @apply p-5 rounded-lg shadow border-2 border-transparent duration-300;
+  }
+
+  .filled_card .icon_wrapper {
+    @apply w-10 py-3 px-2 rounded box-content;
+  }
+
+  .filled_card .icon_wrapper img {
+    @apply w-full;
+  }
+
+  /* info card component */
+  .info_card .thumb {
+    @apply w-full h-[300px] relative overflow-hidden rounded-xl mx-auto;
+  }
+
+  .info_card .thumb img {
+    @apply object-cover w-full h-full rounded-xl;
+  }
+
+  .info_card .overlay {
+    @apply absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4 flex w-full h-full items-center justify-center text-primary  invisible opacity-0 duration-300;
+  }
+
+  .info_card .thumb .overlay .link {
+    @apply text-3xl inline-block px-4 py-3 rounded-full bg-white hover:bg-primary hover:text-white shadow;
+  }
+
+  .info_card .thumb .overlay .social {
+    @apply flex items-center justify-center gap-x-2 text-xl text-primary;
+  }
+
+  .info_card .thumb .overlay a {
+    @apply inline-block py-2 px-3  rounded-full transform hover:scale-110;
+  }
+
+  .info_card .info {
+    @apply w-9/12 mx-auto bg-white rounded-xl shadow text-center py-2 px-4 transform -translate-y-2/4 
+    lg:w-8/12 xl:w-7/12;
+  }
+
+  .info_card .info .title {
+    @apply font-bold text-lg hover:text-primary;
+  }
+
+  /* testimonial component */
+  .testimonial_content {
+    @apply overflow-hidden flex flex-col justify-center min-h-[400px];
+  }
+
+  .testimonial_slider {
+    @apply snap-x flex items-center overflow-x-auto;
+  }
+
+  .testimonial_wrapper {
+    @apply snap-center w-screen px-5;
+  }
+
+  .testimonial_card {
+    @apply w-full mx-auto px-6 py-4 rounded-lg text-center bg-secondary text-offwhite
+    sm:w-8/12 sm:p-8;
+  }
+
+  .testimonial_title {
+    @apply mt-5 font-bold text-xl;
+  }
+
+  .testimonial_subtitle {
+    @apply text-sm text-gray-500 font-semibold;
+  }
+
+  .testimonial_nav {
+    @apply flex items-center justify-center gap-x-2;
+  }
+
+  .testimonial_nav * {
+    @apply border-none p-[6px] rounded-full bg-primary inline-block;
+  }
+
+  .testimonial_nav *.active {
+    padding: 6px 20px;
+  }
+
+  /* form input */
+  .form_input {
+    @apply py-3 px-4 rounded-lg  shadow border border-transparent outline-none ring-0 focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  /* footer */
+  .footer_links {
+    @apply items-center
+    justify-center
+    gap-x-8 gap-y-3
+    hidden
+    sm:flex;
+  }
+
+  .footer_links a {
+    @apply text-offwhite font-semibold;
+  }
+
+  .footer_links a:hover {
+    @apply text-primary;
+  }
+
+  .footer_social {
+    @apply flex
+    items-center
+    justify-center
+    gap-x-6 gap-y-3
+    sm:gap-x-10;
+  }
+
+  .footer_social a {
+    @apply text-gray-700 text-2xl sm:text-3xl;
+  }
+
+  .footer_social a:hover {
+    @apply text-primary;
+  }
+}
