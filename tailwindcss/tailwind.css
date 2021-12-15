@@ -6,11 +6,11 @@
 /* Default Config */
 @layer base {
   html {
-    @apply text-secondary;
+    @apply text-secondary scroll-smooth;
   }
 
   body {
-    @apply bg-offwhite;
+    @apply bg-offwhite overflow-x-hidden;
   }
 
   a,
@@ -29,17 +29,46 @@
 
   /* navbar config */
   .navbar_toggle {
-    @apply bg-primary py-1 px-3 text-lg text-offwhite border-none rounded inline-block
+    @apply bg-primary inline-flex flex-col items-center justify-center gap-y-1 px-2 py-2 rounded relative z-[100]
     md:hidden;
   }
 
+  .navbar_toggle.active {
+    @apply overflow-visible border-2 border-white;
+  }
+
+  .navbar_toggle_overlay {
+    @apply bg-primary transform absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-[100%] p-1 duration-[1s] pointer-events-none ease-in-out z-[99] opacity-40;
+  }
+
+  .active .navbar_toggle_overlay {
+    @apply scale-[500] opacity-100 visible;
+  }
+
+  .navbar_toggle_bars {
+    @apply w-5 h-0.5 bg-white rounded m-0 p-0 block duration-300 ease-in-out pointer-events-none z-[101];
+  }
+
+  .active .navbar_toggle_bars:nth-child(2) {
+    @apply transform rotate-45 translate-y-[5px];
+  }
+
+  .active .navbar_toggle_bars:nth-child(3) {
+    @apply invisible;
+  }
+
+  .active .navbar_toggle_bars:nth-child(4) {
+    @apply transform -rotate-45 -translate-y-1.5;
+  }
+
   .navbar_links {
-    @apply hidden gap-7 flex-col 
-    md:flex-row md:flex;
+    @apply hidden gap-7 flex-col z-[102] fixed top-0 left-0 items-center justify-center w-screen h-screen pointer-events-none
+    md:flex-row md:flex md:justify-start md:static md:w-auto md:h-auto;
   }
 
   .navbar_links a {
-    @apply font-semibold uppercase hover:text-primary;
+    @apply font-semibold uppercase text-white hover:text-secondary md:hover:text-primary pointer-events-auto
+    md:text-secondary;
   }
 
   /* Header config */

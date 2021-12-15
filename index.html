@@ -36,27 +36,36 @@
         <!-- [brand name] -->
 
         <!-- [toggle nav button] -->
-        <button class="navbar_toggle">
-          <i class="bi bi-list"></i>
+        <button class="navbar_toggle" id="navbar_toggle">
+          <!-- [overlay] -->
+          <div class="navbar_toggle_overlay"></div>
+          <!-- [overlay] -->
+          <!-- [bars] -->
+
+          <span class="navbar_toggle_bars"></span>
+          <span class="navbar_toggle_bars"></span>
+          <span class="navbar_toggle_bars"></span>
+
+          <!-- [bars] -->
         </button>
         <!-- [toggle nav button] -->
 
         <!-- [nav links start] -->
-        <ul class="navbar_links">
+        <ul class="navbar_links" id="navbar_links">
           <li>
             <a href="#">Home</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="#about">About</a>
           </li>
           <li>
-            <a href="#">Services</a>
+            <a href="#services">Services</a>
           </li>
           <li>
-            <a href="#">Portfolio</a>
+            <a href="#portfolio">Portfolio</a>
           </li>
           <li>
-            <a href="#">Contact Us</a>
+            <a href="#contact-us">Contact Us</a>
           </li>
         </ul>
         <!-- [nav links end] -->
@@ -96,7 +105,7 @@
     <!-- [header end] -->
 
     <!-- [about us section start] -->
-    <section class="about_us py-10">
+    <section class="about_us py-10 scroll-mt-8" id="about">
       <!-- [wrapper start] -->
       <div class="wrapper">
         <!-- [single column start] -->
@@ -282,7 +291,7 @@
     <!-- [why choose us section end] -->
 
     <!-- [services section start] -->
-    <section class="services py-10">
+    <section class="services py-10 scroll-mt-8" id="services">
       <!-- [wrapper start] -->
       <div class="wrapper">
         <!-- [section title bar] -->
@@ -397,7 +406,10 @@
       <!-- [testimonial content] -->
       <div class="testimonial_content mt-10">
         <!-- [testimonial slider] -->
-        <div class="testimonial_slider w-[300%]">
+        <div
+          class="testimonial_slider w-[300%] duration-300"
+          id="testimonial_slider"
+        >
           <!-- [testimonial card wrapper] -->
           <div class="testimonial_wrapper">
             <!-- [testimonial card] -->
@@ -458,7 +470,7 @@
         <!-- [testimonial slider] -->
 
         <!-- [testimonial nav] -->
-        <div class="testimonial_nav mt-8">
+        <div class="testimonial_nav mt-8" id="testimonial_nav">
           <button class="active"></button>
           <button class=""></button>
           <button class=""></button>
@@ -470,7 +482,7 @@
     <!-- [testimonial section end] -->
 
     <!-- [portfolio section start] -->
-    <div class="protfolio py-10">
+    <div class="protfolio py-10 scroll-mt-8" id="portfolio">
       <!-- [wrapper start] -->
       <div class="wrapper">
         <!-- [section title bar] -->
@@ -776,7 +788,7 @@
     <!-- [our team section end] -->
 
     <!-- [contact us section start] -->
-    <div class="contact_us py-10">
+    <div class="contact_us py-10 scroll-mt-8" id="contact-us">
       <!-- [wrapper start] -->
       <div class="wrapper">
         <!-- [single column start] -->
@@ -899,5 +911,8 @@
       <!-- [wrapper start] -->
     </div>
     <!-- [footer section end] -->
+
+    <!-- [scripts] -->
+    <script src="./scripts/app.js"></script>
   </body>
 </html>
